@@ -51,11 +51,7 @@ const movementDuration = 1;
 const movementFrames = movementDuration * 60;
 
 let sound;
-function preload() {
-  soundFormats('mp3', 'ogg'); // Specify the formats of your music file
-
-  sound = loadSound('/music/bg.mp3');
-}
+function preload() {}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -65,7 +61,6 @@ function setup() {
     let yPos = random(height - 200);
     circles.push({ x: xPos, y: yPos, targetX: xPos, targetY: yPos });
   }
-  sound.play();
 }
 
 function draw() {
