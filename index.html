@@ -1,37 +1,95 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <title>Nephroid
-        </title>
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruminations</title>
 
-          
-        
-        </style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-        
-      </head>
-      <body>
-        
-        <script src="index.js"></script>
-        <audio  autoplay>
-          <source src="music/bg.mp3" type="audio/mpeg" />
-      
-          <p>
-            Download <a href="music/bg.mp3">MP3</a> or
-            
-          </p>
-        </audio>
-        
-        
-        
-    </body>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js " ></script>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-size: 17px;
+  font-family: 'Inter', serif;
+
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+ 
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+.content h1 {
+    font-weight: bold;
+    letter-spacing: 10px;
     
 
+}
+.content p {
+    font-size: 1rem;
+    line-height: 2;
+    font-weight: 100;
+    color: rgb(227, 220, 220);
+}
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-bottom: 30px;
+  background: #720524;
+  color: #fff;
+  cursor: pointer;
+}
 
-    
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+  <source src="rain.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+  <h1>Ruminations of the Wise</h1>
+  <p>"Ruminations of the Wise" is a captivating online platform that immerses you in the profound and enlightening thoughts of the greatest philosophers throughout history. Delve into a collection of captivating bubbles, each containing a nugget of wisdom and contemplation from renowned philosophical minds. Explore a diverse range of philosophical perspectives, from the ancient wisdom of Socrates and Plato to the existential musings of Nietzsche and Sartre. With its visually stunning interface and thought-provoking content, "Ruminations of the Wise" invites you to embark on a journey of introspection and intellectual exploration. Dive into the bubbles of knowledge, challenge your perspectives, and discover the timeless wisdom that continues to shape our understanding of life, existence, and the human condition.
+
+
+
+
+  </p>
+  <a id="myBtn" href="cloud.html" onclick="myFunction()">GET STARTED</a>
+</div>
+
+</body>
+<script>
+    document.getElementById("myBtn").addEventListener("click", function() {
+      localStorage.setItem("playAudio", "true");
+    });
+  </script>
 
 </html>
