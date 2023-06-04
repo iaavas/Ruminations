@@ -51,14 +51,17 @@ const movementDuration = 1;
 const movementFrames = movementDuration * 60;
 
 let sound;
-function preload() {}
+function preload() {
+  fontRegular = loadFont('assets/Regular.ttf');
+
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
   for (let i = 0; i < sentences.length; i++) {
-    let xPos = random(width - 200);
-    let yPos = random(height - 200);
+    let xPos = random(abs(width -100));
+    let yPos = random(abs(height - 100));
     circles.push({ x: xPos, y: yPos, targetX: xPos, targetY: yPos });
   }
 }
@@ -78,11 +81,12 @@ function draw() {
     let fillColor = color(220, 220, 220, 50);
 
     if (d < radius) {
-      textSize(16);
+      textSize(20);
       textAlign(CENTER, CENTER);
-      stroke(255);
+      noStroke()
       fill(255);
-      text(sentences[i], xPos - 100, yPos);
+      textFont(fontRegular);
+      text(sentences[i], width/2-(xPos%10), yPos);
       fillColor = color(240, 230, 140, 70);
     }
 
